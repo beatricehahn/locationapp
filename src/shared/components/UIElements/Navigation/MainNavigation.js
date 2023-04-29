@@ -29,4 +29,4 @@ const MainNavigation = props => {
     )
 }
 
-export default MainNavigation
+export default MainNavigation;
