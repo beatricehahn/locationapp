@@ -11,26 +11,24 @@ import './MainNavigation.css';
 const MainNavigation = props => {
     const [sidebarIsOpen, setSidebar] = useState(false);
 
-    const openSidebar = () => {
+    const openSidebarHandler = () => {
         setSidebar(true);
     }
 
-    const closeSidebar = () => {
+    const closeSidebarHandler = () => {
         setSidebar(false);
     }
 
     return (
         <React.Fragment>
-            {sidebarIsOpen && <Backdrop onClick={closeSidebar} />}
-            {sidebarIsOpen && 
-            <Sidebar>
-                <nav className="main-navigation__drawer-nav">
+            {sidebarIsOpen && <Backdrop onClick={closeSidebarHandler} />}
+            <Sidebar show = {sidebarIsOpen} onClick = {closeSidebarHandler}>
+                <nav className = "main-navigation__drawer-nav">
                     <NavLinks />
                 </nav>
             </Sidebar>
-            }
             <MainHeader>
-                <button className="main-navigation__menu-btn" onClick={openSidebar}>
+                <button className="main-navigation__menu-btn" onClick={openSidebarHandler}>
                     <span />
                     <span />
                     <span />
